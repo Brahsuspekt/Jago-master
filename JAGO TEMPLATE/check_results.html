@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em;
+        }
+        th, td{
+            padding: 0.5em;
+            text-align: left;
+            border: 1px solid #ddd; 
+        }
+        th{
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tbody tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover{
+            background-color: #ddd;
+        }
+        td:first-child{
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="index-2.html" class="logo">
+					<img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Jago</span>
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">L</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">G</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                </li>
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+							<img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+						<span>Admin</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+						<a class="dropdown-item" href="settings.html">Settings</a>
+						<a class="dropdown-item" href="login.html">Logout</a>
+					</div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+                        <li >
+                            <a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                        </li>
+                        <!-- <li class="submenu">
+                            <a href="#"><i class="fa fa-user"></i> <span> Staff </span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="employees.html">VC</a></li>
+                                <li><a href="leaves.html">HOD</a></li>
+                                <li><a href="holidays.html">Lecturers</a></li>
+                                <li><a href="attendance.html">SRC</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="active">
+                            <a href="check_results.html"><i class="fa fa-user"></i> <span>Check Result</span></a>
+                        </li>
+                        <li>
+                            <a href="register_courses.html"><i class="fa fa-calendar"></i> <span>Register Courses</span></a>
+                        </li>
+                        <li>
+                            <a href="registration_history.html"><i class="fa fa-calendar-check-o"></i> <span></span></a>
+                        </li>
+                        <!-- <li class="submenu">
+                            <a href="#"><i class="fa fa-user"></i> <span> Fee </span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="employees.html">VC</a></li>
+                                <li><a href="leaves.html">HOD</a></li>
+                                <li><a href="holidays.html">Lecturers</a></li>
+                                <li><a href="attendance.html">SRC</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-money"></i> <span> Fees </span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="pay_fees.html">Pay Fees</a></li>
+                                <li><a href="payment_history.html">Payment History</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="appointments.html"><i class="fa fa-calendar-check-o"></i> <span>Appointments</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-money"></i> <span> File Sharing </span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="create_docs.html">Create Docs</a></li>
+                                <li><a href="choose_file.html">Choose File</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="wrapper">
+                <div class="resultHeader p-3" style="display: flex; flex-direction: column; justify-content: space-betwen; ">
+                    <img class="mb-2" width="100px" src="data:image/jpeg;base64,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" alt="">
+                    <h3>Student Results</h3>
+                </div>
+                <div class="p-3">
+                        <h4>Semester One (1)</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Code</th>
+                                <th>Course Title</th>
+                                <th>Credit</th>
+                                <th>Total Marks</th>
+                                <th>Grade</th>
+                                <th>Grade Point</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp 123</td>
+                                <td>Networking</td>
+                                <td>3</td>
+                                <td>78</td>
+                                <td>B+</td>
+                                <td>3.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h4>Semester Two (2)</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Course</th>
+                                <th>Course</th>
+                                <th>Course</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                                <td>Comp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/Chart.bundle.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+
+
+</html>
