@@ -1,0 +1,99 @@
+{% extends 'main/base.html' %}
+{% block fees_active %}active{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="resultHeader p-3" style="width: 100%; height: 150px; box-shadow: 0 0 4px 1px lightgray;">
+        <img style="object-fit: cover;" class="mb-2" width="100%" height="100%" src="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="">
+    </div>
+    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.2rem 0.6rem 0.2rem;">
+        <section>
+            <small>1 Select your plan</small>
+            <small>1 Payment</small>
+        </section>
+        <section>
+            <i class="fa fa-bars"></i>
+        </section>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-sm-11 col-lg-6 col-xl-6">
+            <div class="dash-widget">
+                <h4>Select Billing plan</h4>
+                <br>
+                <form action="" class="p-3" style="text-align: center; display: flex; align-items: center;flex-direction: column; width: 100%;">
+                    <div>You owe <h3 class="p-0 m-0">GHS 2604.23</h3>.</div>
+                    <p>Click on the button below to make full payment.</p>
+                    <button class="btn btn-outline-primary"><h4 class="m-0 p-0">Make Payment</h4></button>
+                    <div class="m-3" style="display: flex; align-items: center;width: 100%">
+                        <hr style="padding: 1px;background: rgb(195, 195, 195);width: 100%;">
+                        <small class="m-2">OR</small>
+                        <hr style="padding: 1px;background: rgb(195, 195, 195);width: 100%;">
+                    </div>
+                    
+                </form>
+                <form class="payment" action="" style="text-align: center; display: flex; align-items: center;flex-direction: column; width: 100%;">
+                    <h4 class="mb-3">Pay your own amount.</h4>
+                    <input placeholder="1000.00" type="text" style="text-align: center; width: 200px; padding: 1.5rem;border-radius: 7px;border: 1px solid lightgray">
+                    <br>
+                    <button class="btn btn-success"><h4 class="m-0 p-0">Pay</h4></button>
+                </form>
+                
+            </div>
+        </div>
+        <div class="col-md-10 col-sm-11 col-lg-6 col-xl-6">
+            <div class="dash-widget">
+                <h4>Payment Details</h4>
+                <br>
+                <form action="" class="p-3" style="display: flex; flex-direction: column; width: 100%;">
+                    <div style="display: flex; flex-direction: column;"  class="mb-3">
+                        <div>Select Card.</div>
+                        <select name="" id="" class="p-2">
+                            <option value="">Select Card</option>
+                            <option value="">VISA Card</option>
+                            <option value="">Master Card</option>
+                            <option value="">Mobile Money</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; flex-direction: column;"  class="mb-3">
+                        <small>Card Number</small>
+                        <input type="number">
+                    </div>
+                    <div style="display: flex; flex-direction: column;"  class="mb-3">
+                        <small>Select Network</small>
+                        <select name="" id="" class="p-2">
+                            <option value="">Select Network</option>
+                            <option value="">MTN</option>
+                            <option value="">VODAFONE</option>
+                            <option value="">AIRTEL TIGO</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; flex-direction: column;"  class="mb-3">
+                        <small>Mobile Number</small>
+                        <input type="number">
+                    </div>
+                    <section style="display: flex;" class="mb-3">
+                        <div style="display: flex; flex-direction: column;margin-right: 0.5rem;">
+                            <small>Expiration Date</small>
+                            <input type="number">
+                        </div>
+                        <div style="display: flex; flex-direction: column;margin-right: 0.5rem;">
+                            <small>CVV Code</small>
+                            <input type="number">
+                        </div>
+                    </section>
+                    <section style="display: flex;" class="mb-3">
+                        <div style="display: flex; flex-direction: column;margin-right: 0.5rem;">
+                            <small>Country</small>
+                            <input type="text">
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <small>Postal Code</small>
+                            <input type="text">
+                        </div>
+                    </section>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

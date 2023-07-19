@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %} {% block register_courses_active %}active{%
+endblock %} {% block style %}
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em;
+  }
+  th,
+  td {
+    padding: 0.5em;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+  td:first-child {
+    font-weight: bold;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="wrapper">
+  <div
+    class="resultHeader p-3"
+    style="display: flex; flex-direction: column; justify-content: space-betwen"
+  >
+    <h3>Register Courses</h3>
+  </div>
+  <form method="POST">
+    {% csrf_token %} {% for message in messages %}
+    <h6 style="color: green">{{messge}}</h6>
+    {% endfor %} {% for couses in courses %}
+    <div class="p-3">
+      <h4>Semester Two</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>semester</th>
+            <th>program</th>
+            <th>Thick</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>{{form.name}}</td>
+            <td>{{form.semester}}</td>
+            <td>{{form.program}}</td>
+            <td>
+              <input type="checkbox" style="zoom: 1.5" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary">submit</button>
+      <br />
+    </div>
+    {% endfor %}
+  </form>
+</div>
+{% endblock %}
