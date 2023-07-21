@@ -34,37 +34,39 @@
         <h3>Register Courses</h3>
     </div>
     <form method="POST">
+        {% csrf_token %}
+        {% for message in messages %}
+            <h6 style="color: green;">{{message}}</h6>
+        {% endfor %}
     <div class="p-3">
             <h4>Semester Two</h4>
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Code</th>
-                    <th>Course Title</th>
+                    <th>No</th>
+                    <th>Date Registered</th>
+                    <th>Course Code</th>
+                    <th>Course</th>
                     <th>Credit</th>
+                    <th>Status</th>
                     <th>Thick</th>
                 </tr>
             </thead>
             <tbody>
+                {% for course in courses %}
                 <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
+                    <td>{{course.id}}</td>
+                    <td>{{course.date_registered}}</td>
+                    <td>{{course.course_code}}</td>
+                    <td>{{course.name}}</td>
+                    <td>{{course.credit}}</td>
+                    <td>{{course.status}}</td>
                     <td>
-                        <input type="checkbox" style="zoom:1.5"/>
+                        <input type="checkbox" style="zoom:1.5" required/>
                     </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>
-                        <input type="checkbox" checked required style="zoom:1.5"/>
-                    </td>
-                </tr>
+                {% endfor %}
+                
             </tbody>
         </table>
         <button class="btn btn-primary">submit</button>

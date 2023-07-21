@@ -10,20 +10,22 @@
             <img style="object-fit: cover;" class="mb-2" width="100%" height="100%" src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="">
         </div>
         <div class="p-3">
+            <form method="POST">
+                {% csrf_token %}
             <div>
-                <select style="padding: 0.3rem 0.5rem 0.3rem 0.5rem; border-radius: 5px; margin: 0.3rem;" name="" id="">
-                    <option value="">2019/2020</option>
-                    <option value="">2019/2020</option>
-                    <option value="">2019/2020</option>
-                    <option value="">2019/2020</option>
+                <select name="year" style="padding: 0.3rem 0.5rem 0.3rem 0.5rem; border-radius: 5px; margin: 0.3rem;" name="" id="">
+                    {% for course in courses %}
+                    <option name="year" value="{{ course.year }}">{{course.year}}</option>
+                    {% endfor %}
                 </select>
 
-                <select style="padding: 0.3rem 0.5rem 0.3rem 0.5rem; border-radius: 5px; margin: 0.3rem;" name="" id="">
-                    <option value="">Semester 1</option>
-                    <option value="">Semester </option>
-                    <option value="">Semester 2</option>
-                    <option value="">Semester 2</option>
+                <select name="semester" style="padding: 0.3rem 0.5rem 0.3rem 0.5rem; border-radius: 5px; margin: 0.3rem;" name="" id="">
+                    {% for course in courses %}
+                    <option name="semester"  value="{{ course.semester }}">{{course.semester}}</option>
+                    {% endfor %}
                 </select>
+
+                <input type="submit" placeholder="submit">
 
             </div>
             <table>
@@ -33,70 +35,26 @@
                         <th>Course Code</th>
                         <th>Course Title</th>
                         <th>Credit</th>
-                        <th>Date</th>
-                        <th>Time</th>
+                        <th>Total Mark</th>
+                        <th>Grade</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
+                        <td>{{course.id}}</td>
+                        <td>{{course.course_code}}</td>
+                        <td>{{course.name}}</td>
+                        <td>{{course.credit}}</td>
+                        <td>{{course.mark}}</td>
+                        <td>{{course.Grade}}</td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Comp 123</td>
-                        <td>Networking</td>
-                        <td>3</td>
-                        <td>78</td>
-                        <td>B+</td>
-                    </tr>
+                    {% endfor %}
+                    
                 </tbody>
-            </table>
+            </table> 
             <br>
+            </form>
         </div>
         
     </div>

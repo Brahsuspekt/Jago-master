@@ -55,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'jago.urls'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 TEMPLATES = [
     {

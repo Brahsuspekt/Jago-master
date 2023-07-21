@@ -1,5 +1,7 @@
 from django.db import models
-from users.models import CustomUser
+from django.contrib.auth import get_user_model 
+
+User = get_user_model()
 
 
 class DayTime(models.Model):
@@ -17,12 +19,12 @@ class DayTime(models.Model):
 
 
 class AvailableTime(models.Model):
-    staff = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    staff = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     day_and_time = models.ForeignKey(DayTime, on_delete=models.CASCADE) 
     is_active = models.BooleanField(default=True)
      
 
 class Booking(models.Model):
-    booker = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="booking_booker")
-    reserver = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="booking_reserver")
+    booker = models.ForeignKey(User, on_delete=models.CASCADE, related_name="booking_booker", null=True, blank=True)
+    reserver = models.ForeignKey(User, on_delete=models.CASCADE, related_name="booking_reserver", null=True, blank=True)
     day_time = models.ForeignKey(AvailableTime, on_delete=models.CASCADE)

@@ -1,6 +1,8 @@
 from django.db import models
 from program.models import Program
-from users.models import CustomUser
+from django.contrib.auth import get_user_model 
+
+User = get_user_model()
 
 # Create your models here.
 class Payment(models.Model):
@@ -25,6 +27,6 @@ class Payment(models.Model):
 
 
 class Fees(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     price = models.FloatField(default=0.0)
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE, blank=True, null=True)

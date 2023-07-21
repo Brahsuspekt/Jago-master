@@ -9,19 +9,26 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("fees", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ("program", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="fees",
+            model_name="department",
             name="user",
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
                 to=settings.AUTH_USER_MODEL,
+            ),
+        ),
+        migrations.AddField(
+            model_name="course",
+            name="program",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="program.program"
             ),
         ),
     ]

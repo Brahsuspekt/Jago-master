@@ -48,134 +48,19 @@
                     <th>Grade Point</th>
                 </tr>
             </thead>
+            {% for course in courses %}
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Comp 123</td>
-                    <td>Networking</td>
-                    <td>3</td>
-                    <td>78</td>
-                    <td>B+</td>
-                    <td>3.5</td>
+                    <td>{{course.id}}</td>
+                    <td>{{course.course_code}}</td>
+                    <td>{{course.name}}</td>
+                    <td>{{course.credit}}</td>
+                    <td>{{course.mark}}</td>
+                    <td>{{course.Grade}}</td>
+                    <td>{{course.gpa}}</td>
                 </tr>
             </tbody>
+            {% endfor %}
         </table>
         <br>
         <h4>Semester Two (2)</h4>
