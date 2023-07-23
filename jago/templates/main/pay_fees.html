@@ -34,7 +34,7 @@
                     <h4 class="mb-3">Pay your own amount.</h4>
                     <input placeholder="1000.00" type="text" style="text-align: center; width: 200px; padding: 1.5rem;border-radius: 7px;border: 1px solid lightgray">
                     <br>
-                    <button class="btn btn-success"><h4 class="m-0 p-0">Pay</h4></button>
+                    <button type="submit" class="btn btn-success"><h4 class="m-0 p-0">Pay</h4></button>
                 </form>
                 
             </div>
@@ -45,12 +45,12 @@
                 <br>
                 <form action="" class="p-3" style="display: flex; flex-direction: column; width: 100%;">
                     <div style="display: flex; flex-direction: column;"  class="mb-3">
-                        <div>Select Card.</div>
+                        <div>Select Payment Method.</div>
                         <select name="" id="" class="p-2">
                             <option value="">Select Card</option>
-                            <option value="">VISA Card</option>
-                            <option value="">Master Card</option>
-                            <option value="">Mobile Money</option>
+                            {% for card in payments %}
+                            <option value="">{{card.method}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div style="display: flex; flex-direction: column;"  class="mb-3">
@@ -89,10 +89,18 @@
                             <small>Postal Code</small>
                             <input type="text">
                         </div>
+                
                     </section>
-                    
+                </form>
                 
             </div>
+            <script>
+
+
+
+            </script>
+
+
         </div>
     </div>
 </div>

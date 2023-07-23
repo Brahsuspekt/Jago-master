@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model 
 
+
 User = get_user_model()
 
 
@@ -28,3 +29,11 @@ class Booking(models.Model):
     booker = models.ForeignKey(User, on_delete=models.CASCADE, related_name="booking_booker", null=True, blank=True)
     reserver = models.ForeignKey(User, on_delete=models.CASCADE, related_name="booking_reserver", null=True, blank=True)
     day_time = models.ForeignKey(AvailableTime, on_delete=models.CASCADE)
+
+
+
+
+
+
+
+

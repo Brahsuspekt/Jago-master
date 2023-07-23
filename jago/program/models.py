@@ -2,6 +2,7 @@ from django.db import models
 import string, random
 from program.department import Department
 from django.conf import settings
+from django.dispatch import receiver
 
 
 # Create your models here.
@@ -52,3 +53,21 @@ class Course(models.Model):
     
     def __str__(self):
         return str(self.name)
+
+class SharedFile(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    file_name = models.FileField()
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    @property 
+    def fileName(self):
+        try:
+            url = self.file_name.url 
+        except:
+            url = ''
+        return url 
+
+
+    def __str__(self):
+        return self.name 

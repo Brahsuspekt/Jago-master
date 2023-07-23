@@ -7,3 +7,4 @@ admin.site.site_title = "JAGO CPANEL"
 admin.site.register(Booking)
 admin.site.register(DayTime)
 admin.site.register(AvailableTime)
+
